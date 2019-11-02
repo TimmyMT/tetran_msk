@@ -1,14 +1,4 @@
-- @customers.each do |c|
-  = "Customer id:#{c.id}"
-  br
-  = "Name: #{c.name}"
-  br
-  = "Description: #{c.description}"
-  br
-  = "Phone: #{c.phone}"
-  br
-  = link_to "Edit customer", edit_customer_path(c)
-  br
-  = link_to "Add to black list", add_to_black_list_customer_path(c), method: :patch
-  br
-  br
+= link_to "New Customer", new_customer_path
+br
+br
+= render @customers

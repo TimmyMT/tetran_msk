@@ -1,0 +1,20 @@
+= "Customer id:#{customer.id}"
+br
+= "Name: #{customer.name}"
+br
+= "Description: #{customer.description}"
+br
+= "Phone: #{customer.phone}"
+br
+= link_to "Edit customer", edit_customer_path(customer)
+br
+- if customer.black_list_added?
+  = link_to "Delete from black list", delete_from_black_list_customer_path(customer), method: :patch
+- else
+  = link_to "Add to black list", add_to_black_list_customer_path(customer), method: :patch
+'
+span |
+'
+= link_to "Delete customer", customer_path(customer), method: :delete
+br
+br
