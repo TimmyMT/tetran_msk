@@ -1,19 +1,17 @@
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= Rails.application.credentials.dig(:database, :username) %>
-  password: <%= Rails.application.credentials.dig(:database, :password) %>
+  timeout: 5000
 
 development:
   <<: *default
-  database: tetran_msk_development
+  database: db/tetran_msk_development.sqlite3
 
 test:
   <<: *default
-  database: tetran_msk_test
+  database: db/tetran_msk_test.sqlite3
 
 production:
   <<: *default
-  database: tetran_msk_production
-
+  database: db/tetran_msk_production.sqlite3
