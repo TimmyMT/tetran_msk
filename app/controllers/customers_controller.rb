@@ -18,6 +18,18 @@ class CustomersController < ApplicationController
     end
   end
 
+  def add_black_list_on_phone
+    @customer = Customer.find(params[:phone])
+    if @customer.present?
+      @customer.add_to_black_list
+      if @customer.save
+        redirect_to bl_customers_path
+      end
+    else
+      # create new
+    end
+  end
+
   def add_to_black_list
     @customer.add_to_black_list
     if @customer.save
