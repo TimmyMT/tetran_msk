@@ -1,0 +1,14 @@
+= form_with model: @customer, local: true do |f|
+  = f.label :name
+  br
+  = f.text_field :name
+  br
+  = f.label :phone
+  br
+  = f.text_field :phone
+  br
+  = f.label :description
+  br
+  = f.text_field :description
+  br
+  = f.submit
