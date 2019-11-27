@@ -10,9 +10,62 @@
   </head>
 
   <body>
-    <%= link_to "Customers", customers_path %>
-    |
-    <%= link_to "Black list customers", bl_customers_path %>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="#">
+          <%= image_tag("logo.png", size: "150x50") %>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item active">
+              <%= link_to "Customers", customers_path, class: "nav-link" %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to "Black list customers", bl_customers_path, class: "nav-link" %>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <!--image slider-->
+    <div class="carousel slide" id="slides" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#slides" data-slide-to="0" class="active"></li>
+        <li data-target="#slides" data-slide-to="1"></li>
+        <li data-target="#slides" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= image_tag("slide1.jpg") %>
+          <div class="carousel-caption">
+            <h1 class="display-2">The Long Dark</h1>
+            <h3>try to Survive</h3>
+            <button type="button" class="btn btn-outline-light btn-lg">VIEW DEMO</button>
+            <button type="button" class="btn btn-primary btn-lg">Get Started</button>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <%= image_tag("slide2.jpg") %>
+        </div>
+
+        <div class="carousel-item">
+          <%= image_tag("slide3.jpg") %>
+        </div>
+      </div>
+    </div>
+
     <br>
     <%= yield %>
   </body>
