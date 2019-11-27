@@ -38,8 +38,9 @@
 
       </div>
     </nav>
+
     <!--image slider-->
-    <div class="carousel slide" id="slides" data-ride="carousel">
+    <div class="carousel slide container" id="slides" data-ride="carousel">
       <ul class="carousel-indicators">
         <li data-target="#slides" data-slide-to="0" class="active"></li>
         <li data-target="#slides" data-slide-to="1"></li>
@@ -47,7 +48,8 @@
       </ul>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= image_tag("slide1.jpg") %>
+          <%= image_tag("slide1.jpg", style: "height: 300px; width: 100%") %>
+
           <div class="carousel-caption">
             <h1 class="display-2">The Long Dark</h1>
             <h3>try to Survive</h3>
@@ -57,16 +59,19 @@
         </div>
 
         <div class="carousel-item">
-          <%= image_tag("slide2.jpg") %>
+          <%= image_tag("slide2.jpg", style: "height: 300px; width: 100%") %>
         </div>
 
         <div class="carousel-item">
-          <%= image_tag("slide3.jpg") %>
+          <%= image_tag("slide3.jpg", style: "height: 300px; width: 100%") %>
         </div>
       </div>
     </div>
 
     <br>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

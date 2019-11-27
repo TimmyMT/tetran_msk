@@ -1,7 +1,7 @@
 = form_tag add_black_list_on_phone_customers_path do
-  = text_field_tag :phone
+  = text_field_tag :phone, nil, class: 'form-control fifty-width'
   br
-  = submit_tag "add to black list on phone parameter"
+  = submit_tag "add to black list on phone parameter", class: "btn btn-success btn-sm"
 
 br
 

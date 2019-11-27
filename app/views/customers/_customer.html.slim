@@ -1,20 +1,23 @@
-= "Customer id:#{customer.id}"
-br
-= "Name: #{customer.name}"
-br
-= "Description: #{customer.description}"
-br
-= "Phone: #{customer.phone}"
-br
-= link_to "Edit customer", edit_customer_path(customer)
-br
-- if customer.black_list_added?
-  = link_to "Delete from black list", delete_from_black_list_customer_path(customer), method: :patch
-- else
-  = link_to "Add to black list", add_to_black_list_customer_path(customer), method: :patch
-'
-span |
-'
-= link_to "Delete customer", customer_path(customer), method: :delete
-br
-br
+.col-3
+  .card
+    .card-body
+      = "Customer id:#{customer.id}"
+      br
+      = "Name: #{customer.name}"
+      br
+      = "Description: #{customer.description}"
+      br
+      = "Phone: #{customer.phone}"
+      br
+      = link_to "Edit customer", edit_customer_path(customer), class: "btn btn-outline-secondary btn-sm col-7"
+      br
+      - if customer.black_list_added?
+        = link_to "Delete from black list", delete_from_black_list_customer_path(customer), method: :patch,
+                class: "btn btn-outline-success btn-sm col-10"
+      - else
+        = link_to "Add to black list", add_to_black_list_customer_path(customer), method: :patch,
+                class: "btn btn-outline-warning btn-sm col-8"
+      = link_to "Delete customer", customer_path(customer), method: :delete,
+              class: "btn btn-outline-danger btn-sm col-8"
+      br
+  br
